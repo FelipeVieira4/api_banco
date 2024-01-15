@@ -1,4 +1,4 @@
-
+package com.banco.backend.api;
 
 import com.banco.backend.dots.ClienteDots;
 import com.banco.backend.models.ClienteModel;
@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.swing.text.Utilities;
 
 @RestController
-@RequestMapping("/conta")
+@RequestMapping("/cliente")
 public class ClienteController {
     @Autowired
     private final ClienteRepository clienteRepository;
@@ -49,7 +49,7 @@ public class ClienteController {
     }
 
 
-     @DeleteMapping("/deletar")
+    @DeleteMapping("/deletar")
     public ResponseEntity<ClienteModel> deletarConta(@RequestParam("id") @NotNull int idCliente,
                                                      @RequestParam("pass") @NotNull @NotBlank String pass){
 
