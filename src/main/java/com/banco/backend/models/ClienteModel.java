@@ -34,7 +34,7 @@ public class ClienteModel implements Serializable {
     @Enumerated(EnumType.STRING)
     public Genero genero;
 
-    @OneToMany(mappedBy = "clienteId",cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "clienteID",cascade = CascadeType.ALL)
     private List<ContaModel> contas = new ArrayList<ContaModel>();
 
     public int getId() {
