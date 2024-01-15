@@ -18,6 +18,29 @@ public class ContaModel implements Serializable {
 
     @ManyToOne()
     @JoinColumn(name="clienteID")
-    private ClienteModel clienteId;
+    private ClienteModel clienteID;
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public float getSaldo() {
+        return saldo;
+    }
+
+    public void setSaldo(float saldo) {
+        this.saldo = saldo;
+    }
+
+    public ClienteModel getClienteID() {
+        return clienteID;
+    }
+
+    public void setClienteID(ClienteModel clienteID) {
+        this.clienteID = clienteID;
+    }
 }
