@@ -7,12 +7,15 @@ package com.banco.backend.models;
 
 import jakarta.persistence.*;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "cliente_table")
 public class ClienteModel implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "clienteID")
     private int id;
 
     @Column(name = "nome")
@@ -30,6 +33,9 @@ public class ClienteModel implements Serializable {
     @Column(name = "genero")
     @Enumerated(EnumType.STRING)
     public Genero genero;
+
+    @OneToMany(mappedBy = "clienteId",cascade = CascadeType.ALL)
+    private List<ContaModel> contas = new ArrayList<ContaModel>();
 
     public int getId() {
         return id;
